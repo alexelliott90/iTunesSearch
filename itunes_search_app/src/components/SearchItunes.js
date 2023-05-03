@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react";
+import {React, useState} from "react";
 import { useSelector, useDispatch } from "react-redux"
 import {selectMedia, storeSearchTerm} from "../store/itunesSearch.js";
 
@@ -15,10 +15,7 @@ function SearchItunes(){
 
     const dispatch = useDispatch();
 
-    const mediaSelector = (e) => {
-        dispatch(selectMedia(e.target.value))
-    }
-
+    //search the itunes API on click
     const startSearch = (e) => {
         sendSearch("/searchTerms", {"media":mediaSearchTerm, "term":searchTerm})
         .then((data) => console.log(data))
@@ -85,7 +82,6 @@ function SearchItunes(){
         newSavedItem("/saved", saveItem)
         .then((data) => console.log(data))
         .catch(error => console.error(error));
-
     }
     
     //generate keys for projects display
@@ -156,7 +152,7 @@ function SearchItunes(){
                 <div className="container">
                     <form className="FormItems">
                         <input className="InputBox" placeholder="Search Term" onChange={(e) => (dispatch(storeSearchTerm(e.target.value)))}/>
-                        <select className="Dropdown" onChange={mediaSelector}>
+                        <select className="Dropdown" onChange={(e) => (dispatch(selectMedia(e.target.value)))}>
                                 <option value="">Select media type</option>
                                 {mediaDropdown}
                         </select>

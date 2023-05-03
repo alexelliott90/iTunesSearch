@@ -26,7 +26,7 @@ app.get('/savedItems', (req, resp)=>{
     resp.send(savedItems)
 })
 
-// utility function - gets projects data, and creates the file if it doesn't exist
+// utility function - gets saved data, and creates the file if it doesn't exist
 function getSavedItems(){
     try {
         const content = fs.readFileSync('userSavedItems.json')
