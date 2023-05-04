@@ -1,15 +1,17 @@
 const express = require('express')
 const fs = require('fs')
 const app = express()
-const PORT = process.env.PORT || 8080
+const port = process.env.PORT || 8080
+
+//set up cors
+const cors = require("cors")
+app.use(cors())
+
 
 //set up helmet
 const helmet = require("helmet");
 app.use(helmet());
 
-//set up cors
-const cors = require("cors")
-app.use(cors())
 
 //bodyparser to allow json objects to be passed to the server
 const bodyParser = require('body-parser');
@@ -120,6 +122,6 @@ app.delete('/saved/', (req, resp) => {
     })
 
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}!`)
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}!`)
 })

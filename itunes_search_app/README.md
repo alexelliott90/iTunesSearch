@@ -25,3 +25,7 @@ Hangman App
 
 - The App has been tested with a unit test and two snapshot tests
 - To test the app, navigate to the React app (itunes-search-app) and type npm test
+
+### Github
+
+- The Github repository for this app is located in: https://github.com/alexelliott90/iTunesSearch
