@@ -13,7 +13,6 @@ Hangman App
 - Use the drop down to select the media type, or leave it as default which will search 'all media'
 - From your list of results you can save items to your 'saved items' which will appear on the page
 - In your saved items, you can delete items by pressing the respective delete button
-- Within the 'iTunesSearchApp' folder there is a JSON file called 'userSavedItems' which contains your saved items
 
 ### Security
 
